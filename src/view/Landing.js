@@ -5,8 +5,12 @@ import line from "../assets/line.svg";
 import line2 from "../assets/line2.svg";
 import Card from "../components/Card";
 import InfoCard from "../components/InfoCard";
+import { ReactComponent as Iconright } from "../assets/right.svg";
+import { useState } from "react";
 
 const Landing = () => {
+  const [loadMore, setLoadMore] = useState(false);
+
   const items = [
     "Ecommerce",
     "Popular",
@@ -18,7 +22,6 @@ const Landing = () => {
     "Home and furnitures",
     "Sports & Entertainment",
   ];
-  const num = 6;
   const image = {
     backgroundImage: `url(${background})`,
     height: "682px",
@@ -86,8 +89,8 @@ const Landing = () => {
 
       <div className="mt-16 lg:px-16 px-4">
         <p className="font-bold text-base">Latest Arrivals</p>
-        <div className="flex flex-co mt-12">
-          <div className="bg-[#F5F7FA] p-8 rounded-lg w-72 h-5/6 mr-5">
+        <div className="flex mt-12">
+          <div className="bg-[#F5F7FA] p-8 rounded-lg w-72 h-5/6 mr-5 hidden xl:block">
             <div className="flex justify-between">
               <p className="font-bold">Filters</p>
               <p className="text-[#0069E0] font-semibold">Reset</p>
@@ -110,17 +113,29 @@ const Landing = () => {
               </div>
             ))}
           </div>
-          <div className="bg-[#F5F7FA] p-4 rounded grid gap-2 grid-cols-3 overflow-x-scroll">
-            {[...Array(num)].map((item) => (
-              <div key={item} className="">
-                <div className="mb-4 p-4 ">
+          <div className="flex flex-col lg:flex-row">
+            {[...Array(3)].map((item) => (
+              <div
+                key={item}
+                className="flex flex-col space-y-2 bg-[#F5F7FA] rounded m-2 p-2"
+              >
+                {[...Array(loadMore ? 4 : 2)].map((x) => (
                   <Card />
-                  <Card />
-                </div>
+                ))}
               </div>
             ))}
           </div>
         </div>
+        {
+          loadMore && <p className="text-[#8A91A8] text-center  mx-auto mt-4" >
+          End of product list
+          </p>
+        }
+       {
+         !loadMore &&  <button className="text-[#8A91A8] text-center flex items-center mx-auto mt-4" onClick={() => setLoadMore(true)}>
+         Load more products <Iconright className="ml-2" />
+       </button>
+       }
       </div>
 
       <div className="md:px-16 px-4 mt-16">
@@ -146,10 +161,7 @@ const Landing = () => {
 
       <div className="md:px-16 px-4 mt-16">
         <div className="relative">
-          <div
-            style={downImage}
-            className="rounded-3xl bg-[#0073F5]"
-          ></div>
+          <div style={downImage} className="rounded-3xl bg-[#0073F5]"></div>
           <div className="absolute top-20 md:top-[45%] md:right-[60%] md:translate-x-32 md:-translate-y-20">
             <p className="font-bold text-left leading-tight lg:text-6xl md:text-3xl text-xl text-white">
               Create happiness from buying a gift card today.

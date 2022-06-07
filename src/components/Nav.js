@@ -13,12 +13,12 @@ const Nav = () => {
             <i className="border-l border-[#F5F7FA] py-3 ml-7"></i>
           </Link>
 
-          <div className="flex items-center md:order-2 ">
-            <i className="border-l border-[#F5F7FA] py-3 mr-7"></i>
+          <div className="flex items-center md:order-2">
+            <i className="border-l border-[#F5F7FA] py-3 mr-7 md:block hidden"></i>
             <p className="text-[#8A91A8] font-normal text-sm mr-7">Login</p>
             <button
               type="button"
-              className="text-white flex items-center bg-[#0078FF] hover:bg-blue-800 focus:ring-2 focus:outline-none font-medium rounded text-sm p-2 pl-4 text-center mr-3 md:mr-0 "
+              className="text-white md:flex hidden items-center bg-[#0078FF] hover:bg-blue-800 focus:ring-2 focus:outline-none font-medium rounded text-sm p-2 pl-4 text-center mr-3 md:mr-0 "
             >
               Get started
               <IconMenu className="ml-4" />

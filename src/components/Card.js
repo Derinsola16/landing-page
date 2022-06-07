@@ -2,9 +2,10 @@ import logo from "../assets/amzlogo.svg";
 import { ReactComponent as IconInfo } from "../assets/info.svg";
 import { ReactComponent as IconArrow } from "../assets/arrow.svg";
 
+
 const Card = () => {
   return (
-    <div className="bg-white border-2 boder-[#EBEFF5] p-5 rounded-lg w-[310px]">
+    <div className="bg-white border-2 boder-[#EBEFF5] p-5 rounded-lg xl:w-[310px]">
       <div className="rounded-full bg-[#F5F5F5] text-[#6F6F80] px-5 py-2 font-semibold mb-6 w-28">
         Gift Card
       </div>
@@ -24,7 +25,7 @@ const Card = () => {
         <IconInfo className="mr-2" />
         This card has a fee of $ 0.99
       </p>
-      <button className="mt-6 w-full text-center inline-flex items-center text-white bg-[#0069E0] font-medium rounded px-16 py-2.5 focus:outline-none">
+      <button className="mt-6 text-center mx-auto flex items-center text-white bg-[#0069E0] font-medium rounded px-10 xl:px-16 py-2.5 focus:outline-none">
         Purchase card <IconArrow className="ml-4" stroke="#ffffff" />
       </button>
     </div>
