@@ -103,7 +103,7 @@ const Nav = () => {
               <input
                 type="checkbox"
                 value=""
-                disab
+                disabled
                 id="large-toggle"
                 className="sr-only peer"
               />
